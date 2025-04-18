@@ -10,12 +10,13 @@ const CartProduct = () => {
     const [loading, setLoading] = useState(false);
     const context = useContext(Context);
 
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    
     const loadingProduct = new Array(context.countCart).fill(null);
 
     const fetchData = async () => {
         setLoading(true);
 
-        const backendUrl = import.meta.env.VITE_BACKEND_URL;
         const response = await axios.get(`${backendUrl}/cart/showCartProduct`, { withCredentials: true });
 
         setLoading(false);
@@ -31,7 +32,7 @@ const CartProduct = () => {
 
 
     const increaseQunatity = async (id, qty) => {
-        const response = await axios.post("http://localhost:8080/cart/update", { _id: id, qunatity: qty + 1 }, { withCredentials: true });
+        const response = await axios.post(`${backendUrl}/cart/update`, { _id: id, qunatity: qty + 1 }, { withCredentials: true });
 
         if (response.data.success) {
             fetchData();
@@ -40,7 +41,7 @@ const CartProduct = () => {
 
     const decreaseQunatity = async (id, qty) => {
         if (qty >= 2) {
-            const response = await axios.post("http://localhost:8080/cart/update", { _id: id, qunatity: qty - 1 }, { withCredentials: true });
+            const response = await axios.post(`${backendUrl}/cart/update`, { _id: id, qunatity: qty - 1 }, { withCredentials: true });
 
             if (response.data.success) {
                 fetchData();
@@ -50,7 +51,6 @@ const CartProduct = () => {
 
     // delete cart product
     const handleDeleteProduct = async (id) => {
-        const backendUrl = import.meta.env.VITE_BACKEND_URL;
         const response = await axios.post(`${backendUrl}/cart/remove`, { _id: id }, { withCredentials: true });
 
         if (response.data.success) {
