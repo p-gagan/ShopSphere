@@ -70,7 +70,8 @@ module.exports.LoginIn = async (req, res) => {
 
             const cookieOption = {
                 httpOnly: true,
-                secure: true
+                secure: true,
+                sameSite: "none",
             }
 
             res.cookie("token", token, cookieOption).json({
