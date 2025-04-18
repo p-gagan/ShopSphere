@@ -15,7 +15,8 @@ const CartProduct = () => {
     const fetchData = async () => {
         setLoading(true);
 
-        const response = await axios.get("http://localhost:8080/cart/showCartProduct", { withCredentials: true });
+        const backendUrl = import.meta.env.VITE_BACKEND_URL;
+        const response = await axios.get(`${backendUrl}/cart/showCartProduct`, { withCredentials: true });
 
         setLoading(false);
 
