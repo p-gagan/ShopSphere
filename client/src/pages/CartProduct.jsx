@@ -49,7 +49,8 @@ const CartProduct = () => {
 
     // delete cart product
     const handleDeleteProduct = async (id) => {
-        const response = await axios.post("http://localhost:8080/cart/remove", { _id: id }, { withCredentials: true });
+        const backendUrl = import.meta.env.VITE_BACKEND_URL;
+        const response = await axios.post(`${backendUrl}/cart/remove`, { _id: id }, { withCredentials: true });
 
         if (response.data.success) {
             toast.success(response.data.message);

@@ -27,8 +27,8 @@ const Header = () => {
   const context = useContext(Context);
 
   const handleLogout = async () => {
-
-    const response = await axios.get("http://localhost:8080/logout", { withCredentials: true });
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    const response = await axios.get(`${backendUrl}/logout`, { withCredentials: true });
 
     if (response.data.success) {
       toast.success(response.data.message);

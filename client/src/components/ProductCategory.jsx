@@ -11,7 +11,8 @@ const ProductCategory = () => {
     const fetchProductCategory = async () => {
         setLoading(true);
 
-        const response = await axios.get("http://localhost:8080/product/get-category");
+        const backendUrl = import.meta.env.VITE_BACKEND_URL;
+        const response = await axios.get(`${backendUrl}/product/get-category`);
 
         setLoading(false);
 

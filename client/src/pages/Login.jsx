@@ -33,7 +33,8 @@ const Login = () => {
             password: "",
         });
 
-        const dataResponse = await axios.post("http://localhost:8080/login",formData,{withCredentials:true});
+        const backendUrl = import.meta.env.VITE_BACKEND_URL;
+        const dataResponse = await axios.post(`${backendUrl}/login`,formData,{withCredentials:true});
 
         if (dataResponse.data.success) {
             toast.success(dataResponse.data.message);

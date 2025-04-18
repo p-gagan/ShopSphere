@@ -12,7 +12,8 @@ const ChangeUserRole = ({name,email,role,handleOnClick,userId,callFunc}) => {
     }
 
     const updateUserRole = async()=>{
-            const response = await axios.post("http://localhost:8080/admin-panel/update-user",{role:userRole,userId:userId},{withCredentials:true});
+            const backendUrl = import.meta.env.VITE_BACKEND_URL;
+            const response = await axios.post(`${backendUrl}/admin-panel/update-user`,{role:userRole,userId:userId},{withCredentials:true});
 
             if(response.data.success){
                 toast.success(response.data.message);

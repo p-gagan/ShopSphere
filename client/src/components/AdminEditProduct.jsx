@@ -62,8 +62,10 @@ const AdminEditProduct = ({ onClose, data, fetchData }) => {
     //handle submit functionality of form
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(productData);
-        const response = await axios.post("http://localhost:8080/product/update", productData, { withCredentials: true });
+       
+        const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
+        const response = await axios.post(`${backendUrl}/product/update`, productData, { withCredentials: true });
 
         console.log(response.data);
         if (response.data.success) {

@@ -41,7 +41,8 @@ const signUp = () => {
         try {
             // const { confirmPassword, ...dataToSend } = formData;
             // console.log(dataToSend);
-            const getUser = await axios.post("http://localhost:8080/signup", formData);
+            const backendUrl = import.meta.env.VITE_BACKEND_URL;
+            const getUser = await axios.post(`${backendUrl}/signup`, formData);
 
             // console.log(getUser.data);
 

@@ -14,7 +14,8 @@ const CategoryWiseProduct = ({ category, heading }) => {
 
     const fetchCategoryWaiseProduct = async () => {
         setLoading(true);
-        const response = await axios.post("http://localhost:8080/product//categorized-product", { category });
+        const backendUrl = import.meta.env.VITE_BACKEND_URL;
+        const response = await axios.post(`${backendUrl}/product//categorized-product`, { category });
         setLoading(false);
 
         setData(response.data.data);

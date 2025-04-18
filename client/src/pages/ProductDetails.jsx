@@ -31,7 +31,9 @@ const ProductDetails = () => {
 
   const fetchproductDetails = async () => {
     setLoading(true);
-    const response = await axios.post("http://localhost:8080/product/product-details", { userId: params.id });
+
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    const response = await axios.post(`${backendUrl}/product/product-details`, { userId: params.id });
     setLoading(false);
 
     setDetails(response.data.data);

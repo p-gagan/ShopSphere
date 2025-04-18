@@ -8,7 +8,8 @@ const Products = () => {
   const [allProduct, setAllProduct] = useState([]);
 
   const fetchAllProduct = async()=>{
-    const response = await axios.get("http://localhost:8080/product/show");
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    const response = await axios.get(`${backendUrl}/product/show`);
     setAllProduct(response?.data.data || []);
   }
 

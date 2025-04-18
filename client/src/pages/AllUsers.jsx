@@ -16,7 +16,8 @@ const AllUsers = () => {
   })
 
   const fetchAllUsers = async () => {
-    const response = await axios.get("http://localhost:8080/admin-panel/all-users", { withCredentials: true });
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    const response = await axios.get(`${backendUrl}/admin-panel/all-users`, { withCredentials: true });
 
     if (response.data.success) {
       setAllUsers(response.data.data);

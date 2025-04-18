@@ -62,7 +62,8 @@ const uploadComponent = ({ onClose, fetchData }) => {
     const handleSubmit = async(event) => {
         event.preventDefault();
 
-        const response = await axios.post("http://localhost:8080/product/upload", productData, {withCredentials: true});
+        const backendUrl = import.meta.env.VITE_BACKEND_URL;
+        const response = await axios.post(`${backendUrl}/product/upload`, productData, {withCredentials: true});
 
         if(response.data.success){
             toast.success(response.data.message);

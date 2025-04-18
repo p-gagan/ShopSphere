@@ -28,9 +28,11 @@ function App() {
   //Redux functionality to set state by diapatch()
   const dispatch = useDispatch();
 
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
   const userInfo = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/user-details", { withCredentials: true });
+      const response = await axios.get(`${backendUrl}/user-details`, { withCredentials: true });
 
       if (response.data.success) {
         dispatch(setUserDetails(response.data.data));
@@ -44,7 +46,7 @@ function App() {
   };
 
   const countCartProduct = async()=>{
-    const response = await axios.get("http://localhost:8080/cart/countCartProduct",{withCredentials: true});
+    const response = await axios.get(`${backendUrl}/cart/countCartProduct`,{withCredentials: true});
 
     setCountCart(response.data.data);
   }

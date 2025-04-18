@@ -16,7 +16,9 @@ const Search = () => {
 
     const fetchData = async()=>{
         setLoading(true);
-        const response = await axios.get("http://localhost:8080/product/search"+query.search);
+
+        const backendUrl = import.meta.env.VITE_BACKEND_URL;
+        const response = await axios.get(`${backendUrl}/product/search`+query.search);
         setLoading(false);
 
         setData(response.data.data);
