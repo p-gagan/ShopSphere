@@ -97,10 +97,14 @@ Product reviews & ratings
 Order history & tracking
 
 📸 Screenshots
+![Screenshot (10)](https://github.com/user-attachments/assets/6d92a640-8a36-42ca-8167-13a82d2c1523)
+![Screenshot (9)](https://github.com/user-attachments/assets/3179be1e-049d-43a2-9b54-713f83c1a598)
+![Screenshot (8)](https://github.com/user-attachments/assets/e8cce16c-a6ba-4ea3-8eeb-8b82aa266554)
+
 
 
 📬 Contact
 For any queries or collaboration opportunities, feel free to reach out:
 📧 gaganpatel0205@gmail.com
-🔗 @p-gagan
+🔗 [@p-gagan](https://github.com/p-gagan)
 
