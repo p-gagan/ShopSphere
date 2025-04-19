@@ -75,7 +75,8 @@ Start Backend:
 
 - cd server
 - npm start
-- Start Frontend:
+
+Start Frontend:
 
 - cd client
 - npm start
