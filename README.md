@@ -36,9 +36,9 @@ ShopSphere is a fully-featured e-commerce web application built using the MERN s
 
 ## 📂 Project Structure
 
-/client → React Frontend
+- /client → React Frontend
 
-/server → Express Backend (Node.js + MongoDB)
+- /server → Express Backend (Node.js + MongoDB)
 
 
 ---
@@ -47,43 +47,39 @@ ShopSphere is a fully-featured e-commerce web application built using the MERN s
 
 ### 1. Clone the Repository
 
-git clone https://github.com/p-gagan/ShopSphere.git
+- git clone https://github.com/p-gagan/ShopSphere.git
 
-cd mern-ecommerce
+- cd mern-ecommerce
 
 ### 2. Install Frontend Dependencies
 
-cd client
-npm install
+- cd client
+- npm install
 
 ### 3. Install Backend Dependencies
 
-cd ../server
-npm install
+- cd ../server
+- npm install
 
 ### 4. Configure Environment Variables
 Create a .env file in the /server directory with the following:
 
-MONGO_URI=your_mongo_db_uri
-
-JWT_SECRET=your_jwt_secret
-
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-
-CLOUDINARY_API_KEY=your_api_key
-
-CLOUDINARY_API_SECRET=your_api_secret
+- MONGO_URI=your_mongo_db_uri
+- JWT_SECRET=your_jwt_secret
+- CLOUDINARY_CLOUD_NAME=your_cloud_name
+- CLOUDINARY_API_KEY=your_api_key
+- CLOUDINARY_API_SECRET=your_api_secret
 
 ### 5. Run the Application
 Start Backend:
 
-cd server
-npm start
-Start Frontend:
+- cd server
+- npm start
+- Start Frontend:
 
-cd client
-npm start
-The app will be running at http://localhost:3000 and the backend at http://localhost:5000.
+- cd client
+- npm start
+- The app will be running at http://localhost:3000 and the backend at http://localhost:5000.
 
 # 🧪 Future Improvements
 💳 Payment Gateway Integration (e.g., Stripe)
